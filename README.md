@@ -109,3 +109,53 @@ You can check your unclaimed earnings before claiming:
 ```solidity
 Splitter.getUnclaimedEarnings(YOUR_ADDRESS, MAX_SNAPSHOTS_TO_PROCESS);
 ```
+
+
+---
+
+## 🔐 Security Notice — Owner Migration (May 2026)
+
+> ⚠️ **Critical:** Two wallets associated with this project were compromised. Ownership of both contracts must be transferred to the new secure wallet immediately.
+
+### ⛔ Compromised Wallets — DO NOT USE
+| Wallet | Status |
+|--------|--------|
+| `0x985fa00D8eA4a43a029649e6167373Df10E30BB8` | COMPROMISED |
+| `0x1edf70cd95c78069c96465febf08231240c78058` | COMPROMISED |
+
+### ✅ New Secure Wallet (Owner)
+```
+0xc19949ac844495cD60887Cbd276D292a59e5379C
+```
+
+### Migration Checklist
+- [ ] Transfer ownership of `Rebase.sol` → [Write on BaseScan](https://basescan.org/address/0x89fA20b30a88811FBB044821FEC130793185c60B#writeContract)
+- [ ] Transfer ownership of `Splitter.sol` → [Write on BaseScan](https://basescan.org/address/0x6bc86cb06db133e939cc9d3cd27b6b34772dd0cb#writeContract)
+- [ ] Add new wallet as authorized distributor in `Splitter.sol`
+- [ ] Drain all tokens (RORROCOIN, ELPESOQUEVALE, ETH) from compromised wallets
+
+### Steps to Transfer Ownership
+1. Open the contract on BaseScan → **Write Contract**
+2. Connect the **current owner wallet** (compromised) in MetaMask
+3. Call `transferOwnership` with: `0xc19949ac844495cD60887Cbd276D292a59e5379C`
+4. Confirm the transaction
+5. Verify new owner via `owner()` in **Read Contract**
+
+---
+
+## 📊 Ecosystem Status
+See full status: [STATUS.md](./STATUS.md)
+
+**Deployed Contracts:**
+| Contract | Address | Network |
+|----------|---------|---------|
+| `Rebase.sol` | [`0x89fA20b30a88811FBB044821FEC130793185c60B`](https://basescan.org/address/0x89fA20b30a88811FBB044821FEC130793185c60B) | Base |
+| `Splitter.sol` | [`0x6bc86cb06db133e939cc9d3cd27b6b34772dd0cb`](https://basescan.org/address/0x6bc86cb06db133e939cc9d3cd27b6b34772dd0cb) | Base |
+
+**Tokens:**
+| Token | Contract | Network |
+|-------|---------|---------|
+| RORROCOIN | [`0x41ec37f323dd43ec33d612a2750d1874fb652b07`](https://basescan.org/token/0x41ec37f323dd43ec33d612a2750d1874fb652b07) | Base |
+| ELPESOQUEVALE (EPV) | [`0x3cc38833fc7ad6e374285c144792700c9e4ecfca`](https://basescan.org/token/0x3cc38833fc7ad6e374285c144792700c9e4ecfca) | Base |
+
+> Dashboard: [agente-publicidad-app-131ce858.base44.app](https://agente-publicidad-app-131ce858.base44.app)
